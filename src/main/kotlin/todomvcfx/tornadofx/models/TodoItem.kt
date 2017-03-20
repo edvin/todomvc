@@ -34,7 +34,8 @@ class TodoItem(text: String) {
 }
 
 class TodoItemModel(property: ObjectProperty<TodoItem>) : ItemViewModel<TodoItem>(itemProperty = property) {
-    val text = bind(autocommit = true) { item?.textProperty }
+    val text = bind(autocommit = true) {
+        item?.textProperty }
     val completed = bind(autocommit = true) { item?.completedProperty }
 }
 

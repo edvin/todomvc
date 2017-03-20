@@ -15,7 +15,7 @@ class Store : Controller() {
 
     fun toggleCompleted(completed: Boolean) = with(todos) {
         filter { it.completed != completed }.forEach { it.completed = completed }
-        refilter()
+        invalidate()
     }
 
     fun filterBy(state: FilterState) = when (state) {
