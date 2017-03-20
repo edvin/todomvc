@@ -7,7 +7,7 @@ import tornadofx.*
 
 class Footer : View() {
     val store: Store by inject()
-    val itemsLeft = integerBinding(store.todos) { items.count { !it.completed } }
+    val itemsLeft = integerBinding(store.todos.items) { count { !it.completed } }
 
     override val root = hbox {
         addClass(Styles.footer)

@@ -6,6 +6,7 @@ import tornadofx.*
 
 class Header : View() {
     val store: Store by inject()
+    val allDone = booleanBinding(store.todos.items) { all { it.completed } }
 
     override val root = vbox {
         addClass(Styles.header)
@@ -16,6 +17,7 @@ class Header : View() {
                 addClass(Styles.mainCheckBox)
                 visibleWhen { booleanBinding(store.todos) { isNotEmpty() } }
                 setOnAction { store.toggleCompleted(isSelected) }
+                allDone.onChange { isSelected = it }
             }
             textfield {
                 promptText = "What needs to be done?"
