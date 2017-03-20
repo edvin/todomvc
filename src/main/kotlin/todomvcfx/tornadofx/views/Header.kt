@@ -16,12 +16,12 @@ class Header : View() {
             checkbox {
                 addClass(Styles.mainCheckBox)
                 visibleWhen { booleanBinding(store.todos) { isNotEmpty() } }
-                setOnAction { store.toggleCompleted(isSelected) }
+                action { store.toggleCompleted(isSelected) }
                 allDone.onChange { isSelected = it }
             }
             textfield {
                 promptText = "What needs to be done?"
-                setOnAction {
+                action {
                     store.addTodo(text)
                     clear()
                 }

@@ -14,7 +14,7 @@ class TodoItemFragment : ListCellFragment<TodoItem>() {
     override val root = hbox {
         addClass(Styles.itemRoot)
         checkbox(property = todo.completed) {
-            setOnAction {
+            action {
                 startEdit()
                 commitEdit(item)
             }
@@ -30,11 +30,11 @@ class TodoItemFragment : ListCellFragment<TodoItem>() {
             hgrow = Priority.ALWAYS
             removeWhen { editingProperty.not() }
             whenVisible { requestFocus() }
-            setOnAction { commitEdit(item) }
+            action { commitEdit(item) }
         }
         button(graphic = Styles.closeIcon()) {
             removeWhen { parent.hoverProperty().not().or(editingProperty) }
-            setOnAction { store.removeTodo(item) }
+            action { store.removeTodo(item) }
         }
     }
 }
