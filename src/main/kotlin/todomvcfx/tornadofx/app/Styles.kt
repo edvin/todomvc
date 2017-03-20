@@ -5,11 +5,6 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView
 import javafx.geometry.Pos
 import tornadofx.*
 
-/**
- * CSS Styles for the TodoItem app
- *
- * Created by carl on 10/16/16.
- */
 class Styles : Stylesheet() {
     companion object {
 

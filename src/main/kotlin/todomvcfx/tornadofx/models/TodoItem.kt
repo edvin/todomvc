@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package todomvcfx.tornadofx.models
 
 import javafx.beans.property.ObjectProperty

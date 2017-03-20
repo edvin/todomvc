@@ -23,5 +23,4 @@ class Store : Controller() {
         Active -> todos.predicate = { !it.completed }
         else -> todos.predicate = { true }
     }
-
 }
