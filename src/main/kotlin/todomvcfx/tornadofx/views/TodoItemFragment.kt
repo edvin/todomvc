@@ -12,6 +12,11 @@ class TodoItemFragment : ListCellFragment<TodoItem>() {
     val todo = TodoItemModel(itemProperty)
 
     override val root = hbox {
+        // Enable if you want ellipsis instead of text overflow
+//        cellProperty.onChange { cell ->
+//            if (cell != null)
+//                maxWidthProperty().cleanBind(cell.widthProperty().minus(15))
+//        }
         addClass(Styles.itemRoot)
         checkbox(property = todo.completed) {
             action {
@@ -37,4 +42,5 @@ class TodoItemFragment : ListCellFragment<TodoItem>() {
             action { store.removeTodo(item) }
         }
     }
+
 }
